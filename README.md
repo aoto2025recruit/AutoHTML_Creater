@@ -12,9 +12,11 @@ Excelからデータを取得して、サークルホームページの「新入
 
 (このページから各会員の自己紹介ページに飛ぶことができます。)
 
-「新入生自己紹介ページ」：http://www.otomidori.at-ninja.jp/members.html
+[新入生自己紹介ページ](http://www.otomidori.at-ninja.jp/members.html) (このページから各会員の自己紹介ページに飛ぶことができます。)
 
-「アルバムの販売促進ページ」：http://www.otomidori.at-ninja.jp/albums/10tomidori.html
+
+
+[アルバムの販売促進ページ](http://www.otomidori.at-ninja.jp/works.html)
 
 ## 制作期間
 約3ヶ月
