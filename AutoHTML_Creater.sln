@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoHTML_Creater", "auto-member-detail\AutoHTML_Creater.csproj", "{C95A17C7-1519-494F-8EA3-0F4B29D79243}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup-Otomi_AutoHtml", "Setup-Otomi_AutoHtml\Setup-Otomi_AutoHtml.vdproj", "{EEB22CC5-0785-4AC9-AAC8-1583EE655D2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NunitTest", "NunitTest\NunitTest.csproj", "{FF58DD5F-4AD6-45CE-8E20-59431D2E11E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C95A17C7-1519-494F-8EA3-0F4B29D79243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C95A17C7-1519-494F-8EA3-0F4B29D79243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C95A17C7-1519-494F-8EA3-0F4B29D79243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C95A17C7-1519-494F-8EA3-0F4B29D79243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEB22CC5-0785-4AC9-AAC8-1583EE655D2F}.Debug|Any CPU.ActiveCfg = Debug
+		{EEB22CC5-0785-4AC9-AAC8-1583EE655D2F}.Release|Any CPU.ActiveCfg = Release
+		{FF58DD5F-4AD6-45CE-8E20-59431D2E11E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF58DD5F-4AD6-45CE-8E20-59431D2E11E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF58DD5F-4AD6-45CE-8E20-59431D2E11E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF58DD5F-4AD6-45CE-8E20-59431D2E11E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9EEF655-E50C-4EE4-B81B-D5CA77C2F6B5}
+	EndGlobalSection
+EndGlobal
