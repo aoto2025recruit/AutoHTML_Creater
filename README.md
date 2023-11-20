@@ -10,9 +10,9 @@ Excelからデータを取得して、サークルホームページの「新入
 
 サンプルはこちら
 
-「新入生自己紹介ページ」：http://www.otomidori.at-ninja.jp/members.html
-
 (このページから各会員の自己紹介ページに飛ぶことができます。)
+
+「新入生自己紹介ページ」：http://www.otomidori.at-ninja.jp/members.html
 
 「アルバムの販売促進ページ」：http://www.otomidori.at-ninja.jp/albums/10tomidori.html
 
