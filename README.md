@@ -2,7 +2,7 @@
 ご覧いただきありがとうございます。 このページは自分が作成した自動HTML生成器のコードを公開しております
 (※写真、個人情報を含むデータは非公開/マスキングをかけております。そのため、ダウンロードしても動作しません。)
 
-![Auto_Html_Creater](https://github.com/aoto2025recruit/AutoHTML_Creater/assets/151368384/7bd7081a-9738-4dce-9cf8-b1f9db6ab1ad)
+![Auto_Html_Creater](https://github.com/aoto2025recruit/AutoHTML_Creater/assets/151368384/afdc5f1b-0b06-4074-a08e-cde76a224c75)
 
 
 ## 概要
