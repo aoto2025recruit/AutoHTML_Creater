@@ -9,36 +9,36 @@ using System.Reflection;
 namespace NunitTest
 {
 
-    //ƒtƒH[ƒ€‚Ì’†g‚ÌŠÖ”‚ğƒeƒXƒg‚·‚é
+    //ãƒ•ã‚©ãƒ¼ãƒ ã®ä¸­èº«ã®é–¢æ•°ã‚’ãƒ†ã‚¹ãƒˆã™ã‚‹
     [TestFixture]
     public class FormTest
     {
-        //ƒtƒH[ƒ€‚ÌƒNƒ‰ƒX‚ğİ’è
+        //ãƒ•ã‚©ãƒ¼ãƒ ã®ã‚¯ãƒ©ã‚¹ã‚’è¨­å®š
         Form1 form1 = new Form1();
-        //ƒpƒX
+        //ãƒ‘ã‚¹
         static String dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         static String testpass = @Path.Combine(dir, "Test.xlsx");
 
         [SetUp]
         public void Setup()
         {
-            TestContext.WriteLine("Form1ƒCƒ“ƒXƒ^ƒ“ƒX‚ÌƒeƒXƒgŠJn\n");
+            TestContext.WriteLine("Form1ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒ†ã‚¹ãƒˆé–‹å§‹\n");
             TestContext.WriteLine(dir);
         }
 
-        /*‚±‚Ìâ‘ÎƒpƒX‚Í•Û‘¶æ‚ğ•ÏX‚µ‚Ä‚­‚¾‚³‚¢
-         * (Àİ‚µ‚È‚¢ƒpƒX‚Ì‚ÍsystemƒtƒHƒ‹ƒ_‚Éì‚Á‚Ä‚µ‚Ü‚¤‚Ì‚ÅƒGƒ‰[‚ğo‚·‚Æv‚¢‚Ü‚·)*/
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Save")]//³‚µ‚¢‚Æ‚«
-        /*[TestCase(@"C:\Users\aoto0\Test.xlsx")]//Œë‚Á‚Ä‚¢‚é‚Æ‚«*/
+        /*ã“ã®çµ¶å¯¾ãƒ‘ã‚¹ã¯ä¿å­˜å…ˆã‚’å¤‰æ›´ã—ã¦ãã ã•ã„
+         * (å®Ÿåœ¨ã—ãªã„ãƒ‘ã‚¹ã®æ™‚ã¯systemãƒ•ã‚©ãƒ«ãƒ€ã«ä½œã£ã¦ã—ã¾ã†ã®ã§ã‚¨ãƒ©ãƒ¼ã‚’å‡ºã™ã¨æ€ã„ã¾ã™)*/
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Save")]//æ­£ã—ã„ã¨ã
+        /*[TestCase(@"C:\Users\aoto0\Test.xlsx")]//èª¤ã£ã¦ã„ã‚‹ã¨ã*/
         public void ConfirmFolder_Test(String @foldername)
         {
             String folder_exist = form1.ConfirmFolder(@foldername);
 
-            if (!Directory.Exists(@foldername))//‚à‚µ—LŒø‚ÈƒtƒHƒ‹ƒ_‚Å‚Í‚È‚¢‚È‚ç
+            if (!Directory.Exists(@foldername))//ã‚‚ã—æœ‰åŠ¹ãªãƒ•ã‚©ãƒ«ãƒ€ã§ã¯ãªã„ãªã‚‰
             {
                 Assert.AreNotEqual(@foldername, @folder_exist);
             }
-            else//‚à‚µ—LŒø‚ÈƒtƒHƒ‹ƒ_‚È‚ç‚»‚Ì‚Ü‚Ü
+            else//ã‚‚ã—æœ‰åŠ¹ãªãƒ•ã‚©ãƒ«ãƒ€ãªã‚‰ãã®ã¾ã¾
             {
                 Assert.AreEqual(@foldername, @folder_exist);
             }
@@ -47,64 +47,64 @@ namespace NunitTest
         [TearDown]
         public void TearDown()
         {
-            TestContext.WriteLine("Form1ƒCƒ“ƒXƒ^ƒ“ƒX‚ÌƒeƒXƒgI—¹");
+            TestContext.WriteLine("Form1ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒ†ã‚¹ãƒˆçµ‚äº†");
         }
     }
 
-    //OperteƒNƒ‰ƒX‚ÌŠÖ”‚ğƒeƒXƒg‚·‚é
+    //Operteã‚¯ãƒ©ã‚¹ã®é–¢æ•°ã‚’ãƒ†ã‚¹ãƒˆã™ã‚‹
     [TestFixture]
     public class OperateTest
     {
-        //Operate‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğİ’è
+        //Operateã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¨­å®š
         Operate operate = new Operate();
 
         [SetUp]
         public void Setup()
         {
-            TestContext.WriteLine("OperateƒCƒ“ƒXƒ^ƒ“ƒX‚ÌƒeƒXƒgŠJn");
+            TestContext.WriteLine("Operateã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒ†ã‚¹ãƒˆé–‹å§‹");
         }
 
-        /*‚±‚Ìâ‘ÎƒpƒX‚ÍƒeƒXƒg‚²‚Æ‚É•ÏX‚µ‚Ä‚­‚¾‚³‚¢*/
-        [TestCase(@"C:\Users\aoto0\Test.xlsx",2,2)]//–³Œø‚Èê‡
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test.xlsx", 2, 2)]//—LŒø‚Èê‡
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test.xlsx ", 2, 2)]//—LŒø‚Èê‡(ƒXƒy[ƒX‚ ‚è)
-        [TestCase(@"@C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test.xlsx", 2, 2)]//—LŒø‚Èê‡(ƒXƒy[ƒX‚ ‚è)
-        //Operate_SetfromExcelŠÖ”‚ÌƒeƒXƒg
+        /*ã“ã®çµ¶å¯¾ãƒ‘ã‚¹ã¯ãƒ†ã‚¹ãƒˆã”ã¨ã«å¤‰æ›´ã—ã¦ãã ã•ã„*/
+        [TestCase(@"C:\Users\aoto0\Test.xlsx",2,2)]//ç„¡åŠ¹ãªå ´åˆ
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test.xlsx", 2, 2)]//æœ‰åŠ¹ãªå ´åˆ
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test.xlsx ", 2, 2)]//æœ‰åŠ¹ãªå ´åˆ(ã‚¹ãƒšãƒ¼ã‚¹ã‚ã‚Š)
+        [TestCase(@"ã€€Path\otomi_app-ver2.1\Test_file\Test.xlsx", 2, 2)]//æœ‰åŠ¹ãªå ´åˆ(ã‚¹ãƒšãƒ¼ã‚¹ã‚ã‚Š)
+        //Operate_SetfromExcelé–¢æ•°ã®ãƒ†ã‚¹ãƒˆ
         public void SetExcel_Test(String filename,int start,int end)
         {
-            //«‘Œ^•Ï”‚ğ’è‹`
+            //è¾æ›¸å‹å¤‰æ•°ã‚’å®šç¾©
             Dictionary<String, List<string>> personal_dic = new Dictionary<String, List<string>>(
                                                                 operate.Operate_SetfromExcel(@filename,start,end)
                                                             );
 
-            //«‘Œ^•Ï”‚ª‹ó‚©‚Ç‚¤‚©‚ğ”»’è
+            //è¾æ›¸å‹å¤‰æ•°ãŒç©ºã‹ã©ã†ã‹ã‚’åˆ¤å®š
             Boolean bl = SS.IsEmpty(personal_dic);
 
-            //‹ó‚Ì‚Í‚¸
+            //ç©ºã®ã¯ãš
             Assert.True(bl);
         }
 
         [TestCase(null)]
         [TestCase("")]
         [TestCase("Test")]
-        //JudgeEraceŠÖ”‚ÌƒeƒXƒg
+        //JudgeEraceé–¢æ•°ã®ãƒ†ã‚¹ãƒˆ
         public void JudgeErace_Test(String str)
         {
             int num = operate.JudgeErace(str);
 
-            //‹ó‚©null‚È‚çÁ‚·
+            //ç©ºã‹nullãªã‚‰æ¶ˆã™
             if (String.IsNullOrEmpty(str))
             {
                 Assert.AreEqual(1, num);
             }
-            else//‚»‚¤‚¶‚á‚È‚¢‚È‚ç‚»‚Ì‚Ü‚Ü
+            else//ãã†ã˜ã‚ƒãªã„ãªã‚‰ãã®ã¾ã¾
             {
                 Assert.AreEqual(0, num);
             }
         }
 
         [Test]
-        //EraceSpaceŠÖ”‚ÌƒeƒXƒg
+        //EraceSpaceé–¢æ•°ã®ãƒ†ã‚¹ãƒˆ
         public void EraceSpace_Test()
         {
             String str1 = "";
@@ -123,10 +123,10 @@ namespace NunitTest
         }
 
         [Test]
-        //JudgeTokenŠÖ”‚ÌƒeƒXƒg
+        //JudgeTokené–¢æ•°ã®ãƒ†ã‚¹ãƒˆ
         public void JudgeToken_Test()
         {
-            //•Ö‹X“I‚É•K—v‚ÈƒeƒXƒg
+            //ä¾¿å®œçš„ã«å¿…è¦ãªãƒ†ã‚¹ãƒˆ
             Dictionary<String, List<string>> data = new Dictionary<String, List<string>>();
             String token="";
             String name="";
@@ -145,16 +145,16 @@ namespace NunitTest
         [TestCase(" ")]
         [TestCase("")]
         [TestCase(null)]
-        //StringfirstŠÖ”‚ÌƒeƒXƒg
+        //Stringfirsté–¢æ•°ã®ãƒ†ã‚¹ãƒˆ
         public void Stringfirst_Test(String str)
         {
             String text = operate.Stringfirst(str);
-            //‹ó or null‚È‚ç"%"
+            //ç©º or nullãªã‚‰"%"
             if (String.IsNullOrEmpty(operate.EraceSpace(str)))
             {
                 Assert.AreEqual(text, "%");
             }
-            else//‚»‚êˆÈŠO‚È‚ç@
+            else//ãã‚Œä»¥å¤–ãªã‚‰@
             {
                 Assert.AreEqual(text, "@");
             }
@@ -163,139 +163,139 @@ namespace NunitTest
         [TearDown]
         public void TearDown()
         {
-            TestContext.WriteLine("OperateƒCƒ“ƒXƒ^ƒ“ƒX‚ÌƒeƒXƒgI—¹");
+            TestContext.WriteLine("Operateã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒ†ã‚¹ãƒˆçµ‚äº†");
         }
     }
 
-    //MemberOperteƒNƒ‰ƒX‚ÌŠÖ”‚ğƒeƒXƒg‚·‚é
+    //MemberOperteã‚¯ãƒ©ã‚¹ã®é–¢æ•°ã‚’ãƒ†ã‚¹ãƒˆã™ã‚‹
     [TestFixture]
     public class MemberTest
     {
-        //Member_Operate‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğİ’è
+        //Member_Operateã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¨­å®š
         Member_Operate member = new Member_Operate();
 
         [SetUp]
         public void Setup()
         {
-            TestContext.WriteLine("Member_OperateƒCƒ“ƒXƒ^ƒ“ƒX‚ÌƒeƒXƒgŠJn");
+            TestContext.WriteLine("Member_Operateã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒ†ã‚¹ãƒˆé–‹å§‹");
         }
 
-        /*‚±‚Ìâ‘ÎƒpƒX‚ÍƒeƒXƒg‚²‚Æ‚É•ÏX‚µ‚Ä‚­‚¾‚³‚¢*/
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test1.xlsx", 2, 2)]
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test1.xlsx", 1, 2)]
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test1.xlsx", 2, 1)]
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test1.xlsx", 1, 1)]
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test1.xlsx ", 2, 2)]//—LŒø‚Èê‡(ƒXƒy[ƒX‚ ‚è)
-        [TestCase(@"@C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test1.xlsx", 2, 2)]//—LŒø‚Èê‡(ƒXƒy[ƒX‚ ‚è)
-        //Operate_SetfromExcelŠÖ”‚ÌƒeƒXƒg
+        /*ã“ã®çµ¶å¯¾ãƒ‘ã‚¹ã¯ãƒ†ã‚¹ãƒˆã”ã¨ã«å¤‰æ›´ã—ã¦ãã ã•ã„*/
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test1.xlsx", 2, 2)]
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test1.xlsx", 1, 2)]
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test1.xlsx", 2, 1)]
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test1.xlsx", 1, 1)]
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test1.xlsx ", 2, 2)]//æœ‰åŠ¹ãªå ´åˆ(ã‚¹ãƒšãƒ¼ã‚¹ã‚ã‚Š)
+        [TestCase(@"ã€€Path\otomi_app-ver2.1\Test_file\Test1.xlsx", 2, 2)]//æœ‰åŠ¹ãªå ´åˆ(ã‚¹ãƒšãƒ¼ã‚¹ã‚ã‚Š)
+        //Operate_SetfromExcelé–¢æ•°ã®ãƒ†ã‚¹ãƒˆ
         public void SetExcel_Test(String pass,int start,int end)
         {
-            //«‘Œ^•Ï”‚ğ’è‹`
-            //–³Œø‚Èê‡(•K‚¸ƒGƒ‰[‚ªo‚é‚Ì‚Åƒ_ƒ)
+            //è¾æ›¸å‹å¤‰æ•°ã‚’å®šç¾©
+            //ç„¡åŠ¹ãªå ´åˆ(å¿…ãšã‚¨ãƒ©ãƒ¼ãŒå‡ºã‚‹ã®ã§ãƒ€ãƒ¡)
             /*Dictionary<String, List<string>> personal_dic1 = new Dictionary<String, List<string>>(
                                                                 member.Operate_SetfromExcel(@"C:\Users\aoto0\Test.xlsx",2,2)
                                                             );*/
-            //—LŒø‚Èê‡
+            //æœ‰åŠ¹ãªå ´åˆ
             Dictionary<String, List<string>> personal_dic1 = new Dictionary<String, List<string>>(
                                                                 member.Operate_SetfromExcel(@pass,start,end)
                                                             );
 
             Boolean bl1 = SS.IsEmpty(personal_dic1);
 
-            //‹ó‚¶‚á‚È‚¢
+            //ç©ºã˜ã‚ƒãªã„
             Assert.False(bl1);
-            Assert.AreEqual("–ò‰®", personal_dic1["kusuriya"][0]);
-            Assert.AreEqual("‚·‚½‚í‚ñ", personal_dic1["kusuriya"][1]);
-            Assert.AreEqual("ƒsƒAƒm", personal_dic1["kusuriya"][2]);
-            Assert.AreEqual("ƒgƒ‰ƒ“ƒyƒbƒg", personal_dic1["kusuriya"][3]);
-            Assert.AreEqual("ƒVƒ“ƒZƒTƒCƒU[", personal_dic1["kusuriya"][4]);
-            Assert.AreEqual("ƒgƒƒ“ƒ{[ƒ“", personal_dic1["kusuriya"][5]);
-            Assert.AreEqual("ƒ}ƒŠƒ“ƒo", personal_dic1["kusuriya"][6]);
+            Assert.AreEqual("è–¬å±‹", personal_dic1["kusuriya"][0]);
+            Assert.AreEqual("ã™ãŸã‚ã‚“", personal_dic1["kusuriya"][1]);
+            Assert.AreEqual("ãƒ”ã‚¢ãƒ", personal_dic1["kusuriya"][2]);
+            Assert.AreEqual("ãƒˆãƒ©ãƒ³ãƒšãƒƒãƒˆ", personal_dic1["kusuriya"][3]);
+            Assert.AreEqual("ã‚·ãƒ³ã‚»ã‚µã‚¤ã‚¶ãƒ¼", personal_dic1["kusuriya"][4]);
+            Assert.AreEqual("ãƒˆãƒ­ãƒ³ãƒœãƒ¼ãƒ³", personal_dic1["kusuriya"][5]);
+            Assert.AreEqual("ãƒãƒªãƒ³ãƒ", personal_dic1["kusuriya"][6]);
             Assert.AreEqual("YOASOBI", personal_dic1["kusuriya"][7]); 
-            Assert.AreEqual("‚¢‚«‚à‚Ì‚ª‚©‚è", personal_dic1["kusuriya"][8]);
-            Assert.AreEqual("ƒRƒuƒNƒ", personal_dic1["kusuriya"][9]);
-            Assert.AreEqual("Official•E’jdism", personal_dic1["kusuriya"][10]); 
+            Assert.AreEqual("ã„ãã‚‚ã®ãŒã‹ã‚Š", personal_dic1["kusuriya"][8]);
+            Assert.AreEqual("ã‚³ãƒ–ã‚¯ãƒ­", personal_dic1["kusuriya"][9]);
+            Assert.AreEqual("Officialé«­ç”·dism", personal_dic1["kusuriya"][10]); 
             Assert.AreEqual("Caravan Palace", personal_dic1["kusuriya"][11]);
-            Assert.AreEqual("–é‚É‚©‚¯‚é", personal_dic1["kusuriya"][12]);
-            Assert.AreEqual("‹C‚Ü‚®‚êƒƒ}ƒ“ƒeƒBƒbƒN", personal_dic1["kusuriya"][13]);
+            Assert.AreEqual("å¤œã«ã‹ã‘ã‚‹", personal_dic1["kusuriya"][12]);
+            Assert.AreEqual("æ°—ã¾ãã‚Œãƒ­ãƒãƒ³ãƒ†ã‚£ãƒƒã‚¯", personal_dic1["kusuriya"][13]);
             Assert.AreEqual("blue bird", personal_dic1["kusuriya"][14]);
-            Assert.AreEqual("ƒ~ƒbƒNƒXƒiƒbƒc", personal_dic1["kusuriya"][15]);
+            Assert.AreEqual("ãƒŸãƒƒã‚¯ã‚¹ãƒŠãƒƒãƒ„", personal_dic1["kusuriya"][15]);
             Assert.AreEqual("Lone digger", personal_dic1["kusuriya"][16]);
             Assert.AreEqual("twitter1", personal_dic1["kusuriya"][17]);
             Assert.AreEqual("sound1", personal_dic1["kusuriya"][18]);
             Assert.AreEqual("", personal_dic1["kusuriya"][19]);
             Assert.AreEqual("", personal_dic1["kusuriya"][20]);
-            Assert.AreEqual("ƒeƒXƒg", personal_dic1["kusuriya"][21]);
+            Assert.AreEqual("ãƒ†ã‚¹ãƒˆ", personal_dic1["kusuriya"][21]);
         }
 
         [TearDown]
         public void TearDown()
         {
-            TestContext.WriteLine("Member_OperateƒCƒ“ƒXƒ^ƒ“ƒX‚ÌƒeƒXƒgI—¹");
+            TestContext.WriteLine("Member_Operateã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒ†ã‚¹ãƒˆçµ‚äº†");
         }
     }
 
-    //AlbumOperteƒNƒ‰ƒX‚ÌŠÖ”‚ğƒeƒXƒg‚·‚é
+    //AlbumOperteã‚¯ãƒ©ã‚¹ã®é–¢æ•°ã‚’ãƒ†ã‚¹ãƒˆã™ã‚‹
     [TestFixture]
     public class AlbumTest
     {
-        //Album_Operate‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğİ’è
+        //Album_Operateã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¨­å®š
         Album_Operate album = new Album_Operate();
 
         [SetUp]
         public void Setup()
         {
-            TestContext.WriteLine("Album_OperateƒCƒ“ƒXƒ^ƒ“ƒX‚ÌƒeƒXƒgŠJn");
+            TestContext.WriteLine("Album_Operateã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒ†ã‚¹ãƒˆé–‹å§‹");
         }
 
-        /*‚±‚Ìâ‘ÎƒpƒX‚ÍƒeƒXƒg‚²‚Æ‚É•ÏX‚µ‚Ä‚­‚¾‚³‚¢*/
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test2.xlsx", 2, 6)]
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test2.xlsx", 1, 6)]
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test2.xlsx", 2, 1)]
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test2.xlsx", 1, 1)]
-        [TestCase(@"@C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test2.xlsx", 2, 6)]//ƒXƒy[ƒX‚ ‚è(‘SŠp)
-        [TestCase(@"C:\Users\aoto0\Desktop\otomi_app-ver2.1\Test_file\Test2.xlsx ", 2, 6)]//ƒXƒy[ƒX‚ ‚è(”¼Šp)
-        //Operate_SetfromExcelŠÖ”‚ÌƒeƒXƒg
+        /*ã“ã®çµ¶å¯¾ãƒ‘ã‚¹ã¯ãƒ†ã‚¹ãƒˆã”ã¨ã«å¤‰æ›´ã—ã¦ãã ã•ã„*/
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test2.xlsx", 2, 6)]
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test2.xlsx", 1, 6)]
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test2.xlsx", 2, 1)]
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test2.xlsx", 1, 1)]
+        [TestCase(@"ã€€Path\otomi_app-ver2.1\Test_file\Test2.xlsx", 2, 6)]//ã‚¹ãƒšãƒ¼ã‚¹ã‚ã‚Š(å…¨è§’)
+        [TestCase(@"Path\otomi_app-ver2.1\Test_file\Test2.xlsx ", 2, 6)]//ã‚¹ãƒšãƒ¼ã‚¹ã‚ã‚Š(åŠè§’)
+        //Operate_SetfromExcelé–¢æ•°ã®ãƒ†ã‚¹ãƒˆ
         public void SetExcel_Test(String pass, int start, int end)
         {
-            //«‘Œ^•Ï”‚ğ’è‹`
-            //–³Œø‚Èê‡(•K‚¸ƒGƒ‰[‚ªo‚é‚Ì‚Åƒ_ƒ)
+            //è¾æ›¸å‹å¤‰æ•°ã‚’å®šç¾©
+            //ç„¡åŠ¹ãªå ´åˆ(å¿…ãšã‚¨ãƒ©ãƒ¼ãŒå‡ºã‚‹ã®ã§ãƒ€ãƒ¡)
             /*Dictionary<String, List<string>> personal_dic1 = new Dictionary<String, List<string>>(
                                                                 member.Operate_SetfromExcel(@"C:\Users\aoto0\Test.xlsx",2,2)
                                                             );*/
-            //—LŒø‚Èê‡
+            //æœ‰åŠ¹ãªå ´åˆ
             Dictionary<String, List<string>> personal_dic1 = new Dictionary<String, List<string>>(
                                                                 album.Operate_SetfromExcel(@pass, start, end)
                                                             );
 
             Boolean bl1 = SS.IsEmpty(personal_dic1);
 
-            //‹ó‚¶‚á‚È‚¢
+            //ç©ºã˜ã‚ƒãªã„
             Assert.False(bl1);
-            //ƒAƒ‹ƒoƒ€ƒf[ƒ^
+            //ã‚¢ãƒ«ãƒãƒ ãƒ‡ãƒ¼ã‚¿
             Assert.AreEqual("Autumn Collection", personal_dic1["Other_Data"][0]);
             Assert.AreEqual("combi", personal_dic1["Other_Data"][1]);
-            Assert.AreEqual("H‚Ì–K‚êA‹½D‚Ì”O", personal_dic1["Other_Data"][2]);
-            Assert.AreEqual("–ò‰®", personal_dic1["Other_Data"][3]);
+            Assert.AreEqual("ç§‹ã®è¨ªã‚Œã€éƒ·æ„ã®å¿µ", personal_dic1["Other_Data"][2]);
+            Assert.AreEqual("è–¬å±‹", personal_dic1["Other_Data"][3]);
             Assert.AreEqual("youtube", personal_dic1["Other_Data"][4]);
             Assert.AreEqual("bandcomp", personal_dic1["Other_Data"][5]);
 
-            //‹È‚Ìƒf[ƒ^
+            //æ›²ã®ãƒ‡ãƒ¼ã‚¿
             Assert.AreEqual("01", personal_dic1["kusuriya"][0]);
-            Assert.AreEqual("–ò‰®", personal_dic1["kusuriya"][1]);
-            Assert.AreEqual("ƒƒƒfƒB[", personal_dic1["kusuriya"][2]);
+            Assert.AreEqual("è–¬å±‹", personal_dic1["kusuriya"][1]);
+            Assert.AreEqual("ãƒ¡ãƒ­ãƒ‡ã‚£ãƒ¼", personal_dic1["kusuriya"][2]);
             Assert.AreEqual("melody_comment.txt", personal_dic1["kusuriya"][3]);
-            Assert.AreEqual("—L", personal_dic1["kusuriya"][4]);
+            Assert.AreEqual("æœ‰", personal_dic1["kusuriya"][4]);
             Assert.AreEqual("lyrics.txt", personal_dic1["kusuriya"][5]);
         }
 
-        //BeforeSapceŠÖ”‚ÌƒeƒXƒg
+        //BeforeSapceé–¢æ•°ã®ãƒ†ã‚¹ãƒˆ
         [Test]
         public void BeforeSpace_Test()
         {
             String str1 = "test";
-            String str2 = "test$@–¼‹`$";
-            String str3 = "$@–¼‹`$test";
+            String str2 = "test$@åç¾©$";
+            String str3 = "$@åç¾©$test";
             String str4 = " ";
 
             Assert.AreEqual(album.BeforeSpace(str1), "");
@@ -304,13 +304,13 @@ namespace NunitTest
             Assert.AreEqual(album.BeforeSpace(str4), "");
         }
 
-        //AfterSapceŠÖ”‚ÌƒeƒXƒg
+        //AfterSapceé–¢æ•°ã®ãƒ†ã‚¹ãƒˆ
         [Test]
         public void AfterSpace_Test()
         {
             String str1 = "test";
-            String str2 = "test$@–¼‹`$";
-            String str3 = "$@–¼‹`$test";
+            String str2 = "test$@åç¾©$";
+            String str3 = "$@åç¾©$test";
             String str4 = " ";
 
             Assert.AreEqual(album.AfterSpace(str1), "");
@@ -322,26 +322,26 @@ namespace NunitTest
         [TearDown]
         public void TearDown()
         {
-            TestContext.WriteLine("Album_OperateƒCƒ“ƒXƒ^ƒ“ƒX‚ÌƒeƒXƒgI—¹");
+            TestContext.WriteLine("Album_Operateã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒ†ã‚¹ãƒˆçµ‚äº†");
         }
     }
 
-    //MemoryƒNƒ‰ƒX‚ÌŠÖ”‚ğƒeƒXƒg‚·‚é
+    //Memoryã‚¯ãƒ©ã‚¹ã®é–¢æ•°ã‚’ãƒ†ã‚¹ãƒˆã™ã‚‹
     [TestFixture]
     public class MemoryTest
     {
-        //Memory‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğİ’è
+        //Memoryã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¨­å®š
         Memory memory = new Memory();
 
         [SetUp]
         public void Setup()
         {
-            TestContext.WriteLine("MemoryƒCƒ“ƒXƒ^ƒ“ƒX‚ÌƒeƒXƒgŠJn");
+            TestContext.WriteLine("Memoryã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒ†ã‚¹ãƒˆé–‹å§‹");
         }
 
         
-        [TestCase("excel1","html1",1,2,"save1","ƒƒ“ƒo[Ú×ƒy[ƒW")]
-        [TestCase("excel2", "html2",2,4, "save2", "ƒAƒ‹ƒoƒ€Ú×ƒy[ƒW")]
+        [TestCase("excel1","html1",1,2,"save1","ãƒ¡ãƒ³ãƒãƒ¼è©³ç´°ãƒšãƒ¼ã‚¸")]
+        [TestCase("excel2", "html2",2,4, "save2", "ã‚¢ãƒ«ãƒãƒ è©³ç´°ãƒšãƒ¼ã‚¸")]
         public void Memory_Test(String excel_pass, String html_pass,int startid,int endid, String savepass, String selectfile)//, String html_pass, int startid, int endid, String savepass, String selectfile
         {
             
@@ -357,7 +357,7 @@ namespace NunitTest
         [TearDown]
         public void TearDown()
         {
-            TestContext.WriteLine("MemoryƒCƒ“ƒXƒ^ƒ“ƒX‚ÌƒeƒXƒgI—¹");
+            TestContext.WriteLine("Memoryã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒ†ã‚¹ãƒˆçµ‚äº†");
         }
     }
 
